@@ -17,19 +17,20 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "Curso")
+@Table(name = "curso")
 public class Curso {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idCurso;
+	private String codigo;
 	private String nombre;
-	private String apellido;
+	private String estado;
 	
 	@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "idSistemaEvaluacion")
-	private SistemaEvaluacion SistemaEvaluacion;
+	private SistemaEvaluacion sistemaEvaluacion;
 	
 	
 	
